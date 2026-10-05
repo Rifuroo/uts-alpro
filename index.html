@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlgoKode -- Studi Kasus Algoritma dan Pemrograman C++</title>
+  <meta name="description" content="Kumpulan studi kasus algoritma dan pemrograman C++ lengkap dengan penjelasan, pseudocode, dan implementasi kode. Belajar algoritma dengan cara yang menyenangkan." />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts: Source Code Pro + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" id="hljs-theme" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Navigasi utama">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+        <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand-name">AlgoKode</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <!-- Dark mode toggle -->
+        <button class="btn btn-icon" id="themeToggle" aria-label="Ganti tema gelap/terang" title="Ganti tema">
+          <i class="bi bi-moon-stars-fill" id="themeIcon" aria-hidden="true"></i>
+        </button>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Buka menu navigasi">
+          <i class="bi bi-list fs-4" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#studi-kasus">Studi Kasus</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero" aria-labelledby="heroHeading">
+    <div class="container">
+      <div class="row align-items-center min-vh-hero">
+        <div class="col-lg-7 col-md-8 hero-content">
+          <span class="hero-tag">Studi Kasus Algoritma + C++</span>
+          <h1 id="heroHeading" class="hero-title">
+            Kuasai Algoritma<br />Lewat Studi Kasus Nyata
+          </h1>
+          <p class="hero-desc">
+            Pelajari algoritma klasik dan modern melalui contoh kasus konkret, implementasi C++ yang bisa langsung dijalankan, dan penjelasan langkah demi langkah.
+          </p>
+          <div class="hero-actions d-flex flex-wrap gap-3">
+            <a href="#studi-kasus" class="btn btn-primary-custom">
+              Lihat Studi Kasus
+              <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i>
+            </a>
+            <a href="#tentang" class="btn btn-outline-custom">Tentang Blog</a>
+          </div>
+
+          <!-- Quick stats (real: based on actual content) -->
+          <div class="hero-stats d-flex flex-wrap gap-4 mt-5">
+            <div class="stat-item">
+              <span class="stat-number" id="statKasus">8</span>
+              <span class="stat-label">Studi Kasus</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="statKategori">5</span>
+              <span class="stat-label">Kategori</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">C++17</span>
+              <span class="stat-label">Standar Kode</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-4 d-none d-md-flex justify-content-center">
+          <div class="hero-code-preview" aria-hidden="true">
+            <div class="code-window-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="code-filename">bubble_sort.cpp</span>
+            </div>
+            <pre class="hero-code"><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+void bubbleSort(int arr[], int n) {
+  for (int i = 0; i &lt; n-1; i++) {
+    for (int j = 0; j &lt; n-i-1; j++) {
+      if (arr[j] &gt; arr[j+1]) {
+        swap(arr[j], arr[j+1]);
+      }
+    }
+  }
+}
+
+int main() {
+  int arr[] = {64, 34, 25, 12, 22};
+  int n = sizeof(arr)/sizeof(arr[0]);
+  bubbleSort(arr, n);
+  // Output: 12 22 25 34 64
+  return 0;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-gradient-orb" aria-hidden="true"></div>
+  </section>
+
+  <!-- STUDI KASUS SECTION -->
+  <section class="cases-section" id="studi-kasus" aria-labelledby="casesHeading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="casesHeading" class="section-title">Studi Kasus</h2>
+        <p class="section-subtitle">Filter berdasarkan kategori algoritma yang ingin kamu pelajari</p>
+      </div>
+
+      <!-- Search + Filter -->
+      <div class="filter-bar" role="search">
+        <div class="search-wrap">
+          <i class="bi bi-search search-icon" aria-hidden="true"></i>
+          <input type="search" id="searchInput" class="form-control search-input" placeholder="Cari studi kasus..." aria-label="Cari studi kasus" />
+        </div>
+        <div class="filter-chips" role="group" aria-label="Filter kategori">
+          <button class="chip active" data-filter="all" id="filter-all">Semua</button>
+          <button class="chip" data-filter="sorting" id="filter-sorting">Pengurutan</button>
+          <button class="chip" data-filter="searching" id="filter-searching">Pencarian</button>
+          <button class="chip" data-filter="graph" id="filter-graph">Graf</button>
+          <button class="chip" data-filter="recursion" id="filter-recursion">Rekursi</button>
+          <button class="chip" data-filter="dp" id="filter-dp">Dynamic Programming</button>
+        </div>
+      </div>
+
+      <!-- Case Cards Grid -->
+      <div class="row g-4" id="casesGrid" aria-live="polite" aria-atomic="false">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state d-none" id="emptyState" role="status" aria-live="polite">
+        <i class="bi bi-search fs-1 mb-3" aria-hidden="true"></i>
+        <p class="mb-1 fw-semibold">Tidak ada studi kasus ditemukan</p>
+        <p class="text-muted small">Coba ubah kata kunci atau pilih kategori lain</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE DETAIL MODAL -->
+  <div class="modal fade" id="caseModal" tabindex="-1" aria-labelledby="caseModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="modal-category-badge" id="modalBadge"></span>
+            <h3 class="modal-title mt-1" id="caseModalLabel"></h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup detail studi kasus"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Content injected by JS -->
+        </div>
+        <div class="modal-footer justify-content-start">
+          <span class="text-muted small" id="modalComplexity"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TENTANG SECTION -->
+  <section class="about-section" id="tentang" aria-labelledby="aboutHeading">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 id="aboutHeading" class="section-title">Tentang Blog Ini</h2>
+          <p class="about-text">
+            Blog ini dibuat sebagai kumpulan referensi studi kasus algoritma dan pemrograman C++. Setiap studi kasus disajikan dengan konteks masalah nyata, analisis kompleksitas, dan implementasi kode yang bisa langsung digunakan.
+          </p>
+          <p class="about-text">
+            Materi mencakup algoritma klasik seperti sorting dan searching, hingga topik lanjutan seperti graph traversal dan dynamic programming.
+          </p>
+          <div class="about-highlights d-flex flex-column gap-3 mt-4">
+            <div class="highlight-item d-flex align-items-start gap-3">
+              <span class="highlight-icon" aria-hidden="true"><i class="bi bi-code-square"></i></span>
+              <div>
+                <strong>Kode siap pakai</strong>
+                <p class="mb-0 text-muted small">Setiap contoh dikompilasi dan diuji dengan standar C++17</p>
+              </div>
+            </div>
+            <div class="highlight-item d-flex align-items-start gap-3">
+              <span class="highlight-icon" aria-hidden="true"><i class="bi bi-bar-chart-steps"></i></span>
+              <div>
+                <strong>Analisis kompleksitas</strong>
+                <p class="mb-0 text-muted small">Setiap algoritma dilengkapi notasi Big-O untuk waktu dan ruang</p>
+              </div>
+            </div>
+            <div class="highlight-item d-flex align-items-start gap-3">
+              <span class="highlight-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></span>
+              <div>
+                <strong>Penjelasan bertahap</strong>
+                <p class="mb-0 text-muted small">Dari deskripsi masalah, pseudocode, hingga implementasi lengkap</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-card">
+            <div class="about-card-header">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="ms-2 small opacity-50">kompleksitas.txt</span>
+            </div>
+            <div class="about-card-body">
+              <div class="complexity-row">
+                <span class="complexity-label">Bubble Sort</span>
+                <span class="complexity-val good">O(n²)</span>
+              </div>
+              <div class="complexity-row">
+                <span class="complexity-label">Merge Sort</span>
+                <span class="complexity-val better">O(n log n)</span>
+              </div>
+              <div class="complexity-row">
+                <span class="complexity-label">Binary Search</span>
+                <span class="complexity-val better">O(log n)</span>
+              </div>
+              <div class="complexity-row">
+                <span class="complexity-label">BFS / DFS</span>
+                <span class="complexity-val better">O(V + E)</span>
+              </div>
+              <div class="complexity-row">
+                <span class="complexity-label">Fibonacci DP</span>
+                <span class="complexity-val best">O(n)</span>
+              </div>
+              <div class="complexity-row">
+                <span class="complexity-label">Knapsack DP</span>
+                <span class="complexity-val good">O(n * W)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <span class="brand-icon small" aria-hidden="true">&lt;/&gt;</span>
+          <span class="fw-semibold">AlgoKode</span>
+        </div>
+        <p class="mb-0 text-muted small text-center">
+          Referensi studi kasus algoritma dan pemrograman C++ untuk semua kalangan.
+        </p>
+        <p class="mb-0 text-muted small">&copy; 2025 AlgoKode</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
